@@ -13,14 +13,16 @@ function printMessage(username, badgeCount, points){
     //TODO: connect to API URL (https://teamtreehouse.com/michaelzalik.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
     let body = "";
+    //read data
     response.on("data", data => {
         body += data.toString();
     });
 
     response.on('end', () => {
+    //parse data
         console.log(body);
     });
-//TODO: read the data
-//TODO: parse data
+
+
 //TODO: print data    
 });
