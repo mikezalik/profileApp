@@ -1,3 +1,7 @@
+//require https module
+const https = require('https');
+const username = "michaelzalik";
+
 
 
 //print message to console
@@ -7,7 +11,8 @@ function printMessage(username, badgeCount, points){
     }
 
     //TODO: connect to API URL (https://teamtreehouse.com/michaelzalik.json)
-const request = https.get(`https://teamtreehouse.com/${username}.json`, respone => {
+const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
+    console.dir(response);
 //TODO: read the data
 //TODO: parse data
 //TODO: print data    
