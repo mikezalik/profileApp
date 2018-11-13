@@ -1,7 +1,4 @@
-//TODO: connect to API URL (https://teamtreehouse.com/michaelzalik.json)
-//TODO: read the data
-//TODO: parse data
-//TODO: print data
+
 
 //print message to console
 function printMessage(username, badgeCount, points){
@@ -9,4 +6,9 @@ function printMessage(username, badgeCount, points){
     console.log(message);
     }
 
-printMessage("Mike", 2, 400);
+    //TODO: connect to API URL (https://teamtreehouse.com/michaelzalik.json)
+const request = https.get(`https://teamtreehouse.com/${username}.json`, respone => {
+//TODO: read the data
+//TODO: parse data
+//TODO: print data    
+});
