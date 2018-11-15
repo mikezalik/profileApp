@@ -1,3 +1,5 @@
+//command line based node app
+
 //require https module
 const https = require('https');
 const username = "michaelzalik";
