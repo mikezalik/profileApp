@@ -11,6 +11,8 @@ function printMessage(username, badgeCount, points){
     console.log(message);
     }
 
+    
+    function getProfile(username) {
     //connect to API URL (https://teamtreehouse.com/michaelzalik.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
     let body = "";
@@ -25,3 +27,7 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
     });
     //TODO: print data    
 });
+
+    }
+
+    const users = ["chalkers", "michaelzalik"];
