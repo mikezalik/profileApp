@@ -30,8 +30,6 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
 
     }
 
-    const users = ["chalkers", "michaelzalik"];
+    const users = process.argv.slice(2);
 
-    users.forEach(username => {
-        getProfile(username);
-    });
+ 
