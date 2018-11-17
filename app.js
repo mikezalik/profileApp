@@ -13,6 +13,7 @@ function printMessage(username, badgeCount, points){
 
     
     function getProfile(username) {
+    try {
     //connect to API URL (https://teamtreehouse.com/michaelzalik.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
     let body = "";
@@ -23,13 +24,17 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
     response.on('end', () => {
     //parse data
         const profile = JSON.parse(body);
+    //TODO: print data
         printMessage(username, profile.badges.length, profile.points.JavaScript);
     });
-    //TODO: print data    
 });
-
+request.on('error', error => console.error('Problem with request: ${error.message}'));     
     }
-
+    catch (error) {
+        console.error(error.message);
+        }
+    }
     const users = process.argv.slice(2);
+    users.forEach(getProfile);
 
  
