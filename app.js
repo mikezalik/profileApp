@@ -31,3 +31,7 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
     }
 
     const users = ["chalkers", "michaelzalik"];
+
+    users.forEach(username => {
+        getProfile(username);
+    });
