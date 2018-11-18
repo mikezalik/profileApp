@@ -3,6 +3,7 @@
 
 //require https module
 const https = require('https');
+const http = require('http');
 const username = "michaelzalik";
 
 //print error messages
