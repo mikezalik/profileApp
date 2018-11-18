@@ -37,7 +37,7 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
              printError(error);
          } });
         } else {
-            const message = 'There was an error getting the profile for ${username} ($(response.statusCode})' ;
+            const message = 'There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]})' ;
             const statusCodeError = new Error(message);
             printError(statusCodeError);
         }
