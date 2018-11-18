@@ -16,16 +16,16 @@ function getProfile(username) {
     //connect to API URL (https://teamtreehouse.com/michaelzalik.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
     let body = "";
-    //read data
-    response.on("data", data => {
-        body += data.toString();
-    });
-    //parse data
-    response.on('end', () => {
-        const profile = JSON.parse(body);
-    //print data
-        printMessage(username, profile.badges.length, profile.points.JavaScript);
-    });
+        //read data
+        response.on("data", data => {
+            body += data.toString();
+        });
+        //parse data
+        response.on('end', () => {
+            const profile = JSON.parse(body);
+        //print data
+            printMessage(username, profile.badges.length, profile.points.JavaScript);
+        });
 });
 request.on('error', error => console.error('Problem with request: ${error.message}'));     
     }
@@ -33,6 +33,7 @@ request.on('error', error => console.error('Problem with request: ${error.messag
         console.error(error.message);
         }
     }
+
 const users = process.argv.slice(2);
 users.forEach(getProfile);
 
