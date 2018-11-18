@@ -21,11 +21,15 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
             body += data.toString();
         });
 //parse data
+        
         response.on('end', () => {
+            try {
             const profile = JSON.parse(body);
 //print data
             printMessage(username, profile.badges.length, profile.points.JavaScript);
-        });
+         } catch (error) {
+             console.error(error.message);
+         } });
 });
 request.on('error', error => console.error('Problem with request: ${error.message}'));     
     }
