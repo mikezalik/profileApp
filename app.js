@@ -3,6 +3,7 @@
 
 //require https module
 const https = require('https');
+//require http module
 const http = require('http');
 const username = "michaelzalik";
 
@@ -38,7 +39,7 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
              printError(error);
          } });
         } else {
-            const message = 'There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]})' ;
+            const message = `There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]})`;
             const statusCodeError = new Error(message);
             printError(statusCodeError);
         }
