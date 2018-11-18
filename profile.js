@@ -1,3 +1,6 @@
+//command line based node app
+//TODO: code similar functionality for another API?
+
 //require https module
 const https = require('https');
 //require http module
