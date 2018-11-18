@@ -10,9 +10,8 @@ function printMessage(username, badgeCount, points){
      const message = `${username} has ${badgeCount} total badge(s) and ${points} points in JavaScript`;
     console.log(message);
     }
-
     
-    function getProfile(username) {
+function getProfile(username) {
     try {
     //connect to API URL (https://teamtreehouse.com/michaelzalik.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
@@ -34,7 +33,7 @@ request.on('error', error => console.error('Problem with request: ${error.messag
         console.error(error.message);
         }
     }
-    const users = process.argv.slice(2);
-    users.forEach(getProfile);
+const users = process.argv.slice(2);
+users.forEach(getProfile);
 
  
