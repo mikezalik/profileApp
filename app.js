@@ -36,9 +36,8 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
              printError(error);
          } });
 });
-request.on('error', error => console.error('Problem with request: ${error.message}'));     
-    }
-    catch (error) {
+request.on('error', printError);
+} catch (error) {
         printError(error);
         }
     }
