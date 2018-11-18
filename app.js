@@ -5,6 +5,11 @@
 const https = require('https');
 const username = "michaelzalik";
 
+//print error messages
+function printError(error){
+    console.error(error.message);
+}
+
 //print message to console
 function printMessage(username, badgeCount, points){
      const message = `${username} has ${badgeCount} total badge(s) and ${points} points in JavaScript`;
@@ -28,13 +33,13 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
 //print data
             printMessage(username, profile.badges.length, profile.points.JavaScript);
          } catch (error) {
-             console.error(error.message);
+             printError(error);
          } });
 });
 request.on('error', error => console.error('Problem with request: ${error.message}'));     
     }
     catch (error) {
-        console.error(error.message);
+        printError(error);
         }
     }
 
