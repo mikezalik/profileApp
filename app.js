@@ -20,6 +20,7 @@ function getProfile(username) {
     try {
 //connect to API URL (https://teamtreehouse.com/${username}.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
+    if (response.statusCode === 200) {
     let body = "";
 //read data
         response.on("data", data => {
@@ -35,7 +36,13 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
          } catch (error) {
              printError(error);
          } });
+        } else {
+            const message = 'There was an error getting the profile for ${username} ($(response.statusCode})' ;
+            const statusCodeError = new Error(message);
+            printError(statusCodeError);
+        }
 });
+
 request.on('error', printError);
 } catch (error) {
         printError(error);
