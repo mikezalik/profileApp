@@ -13,7 +13,7 @@ function printMessage(username, badgeCount, points){
     
 function getProfile(username) {
     try {
-    //connect to API URL (https://teamtreehouse.com/michaelzalik.json)
+    //connect to API URL (https://teamtreehouse.com/${username}.json)
 const request = https.get(`https://teamtreehouse.com/${username}.json`, response => {
     let body = "";
         //read data
