@@ -1,9 +1,9 @@
 //command line based node app
 //TODO: code similar functionality for another API?
-//TODO: find other api that may utilize API
 
 //require https module
 const https = require('https');
+
 //require http module
 const http = require('http');
 const username = "michaelzalik";
@@ -14,10 +14,10 @@ function printError(error){
 }
 
 //print message to console
-function printMessage(username, badgeCount, points){
-     const message = `${username} has ${badgeCount} total badge(s) and ${points} points in JavaScript`;
-    console.log(message);
-    }
+function printMessage(username, badgeCount, points) {
+    const message = `${username} has ${badgeCount} total badge(s) and ${points} points in JavaScript`;
+        console.log(message);
+}
     
 function get(username) {
     try {
@@ -33,12 +33,12 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
         
         response.on('end', () => {
             try {
-            const profile = JSON.parse(body);
+        const profile = JSON.parse(body);
 //print data
-            printMessage(username, profile.badges.length, profile.points.JavaScript);
-         } catch (error) {
-             printError(error);
-         } });
+        printMessage(username, profile.badges.length, profile.points.JavaScript);
+            } catch (error) {
+        printError(error);
+    }});
         } else {
             const message = `There was an error getting the profile for ${username} (${http.STATUS_CODES[response.statusCode]})`;
             const statusCodeError = new Error(message);
@@ -47,9 +47,9 @@ const request = https.get(`https://teamtreehouse.com/${username}.json`, response
 });
 
 request.on('error', printError);
-} catch (error) {
-        printError(error);
+    } catch (error) {
+            printError(error);
         }
-    }
+}
 
 module.exports.get = get;
