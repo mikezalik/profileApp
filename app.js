@@ -1,6 +1,5 @@
 //command line based node app
-//TODO: code similar functionality for another API?
-//TODO: find other api that may utilize API
+//TODO: Code similar functionality for another API?
 
 //require profile.js
 const profile = require('./profile.js');
