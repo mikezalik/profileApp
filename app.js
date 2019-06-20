@@ -1,11 +1,9 @@
-//command line based node app
-//TODO: Code similar functionality for another API?
+// command line based node app
+// TODO: Code similar functionality for another API?
 
-//require profile.js
+// require profile.js
 const profile = require('./profile.js');
 
-//username input
+// username input
 const users = process.argv.slice(2);
 users.forEach(profile.get);
-
- 
